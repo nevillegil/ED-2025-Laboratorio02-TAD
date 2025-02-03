@@ -251,7 +251,8 @@ Esta función añade un alumno a la asignatura.
 procedure Evaluar(var A: TAsignatura; AlumnoDNI: string; Nota: Real; Parcial: Integer);
 ```
 
-Este procedimiento evalúa a un alumno en un parcial específico.
+Este procedimiento evalúa a un alumno en un parcial específico. Dado que hay dos parciales, el parámetro `Parcial` puede ser 1 o 2. 
+No nos preocuparemos por la validación de los parámetros en este ejercicio. Vamos a asumir que los parámetros son correctos.
 
 4. `CalcularNotaFinal`
 
@@ -259,7 +260,8 @@ Este procedimiento evalúa a un alumno en un parcial específico.
 function CalcularNotaFinal(A: TAsignatura; AlumnoDNI: string): Real;
 ```
 
-Esta función calcula la nota final de un alumno en la asignatura.
+Esta función calcula la nota final de un alumno en la asignatura. En este caso, la nota final se calcula como el promedio de las notas de los dos parciales.
+No nos preocuparemos por determinar si un alumno ha sido evaluado en ambos parciales. Vamos a asumir que todos los alumnos han sido evaluados en ambos parciales.
 
 ## Unidad `uAsignaturaEvalFinal.pas`
 
@@ -303,7 +305,7 @@ Este procedimiento evalúa a un alumno con una nota final.
 function CalcularNotaFinal(A: TAsignatura; AlumnoDNI: string): Real;
 ```
 
-Esta función calcula la nota final de un alumno en la asignatura.
+Esta función calcula la nota final de un alumno en la asignatura. En este caso, la nota final de su único examen es la nota final del alumno.
 
 ## Implementación
 
