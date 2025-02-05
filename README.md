@@ -10,8 +10,6 @@
 | Universidad   | Universidad Rey Juan Carlos        |
 | Curso         | 2024/2025                          |
 
-
-
 # Ejercicio 1: Números Complejos
 
 En este ejercicio, trabajaremos con números complejos. Para ello, se proporcionan dos archivos Pascal:
@@ -24,19 +22,18 @@ El archivo `tad_ej1_num_complejo.pas` utiliza la unidad `uComplejo.pas`, la cual
 ## Registros y variables
 
 Define un registro `TComplejo` que represente un número complejo. Este registro debe tener dos campos:
-- `parteReal`: de tipo `Double`, que representa la parte real del número complejo.
-- `parteImaginaria`: de tipo `Double`, que representa la parte imaginaria del número complejo.
-
+- `r`: de tipo `Double`, que representa la parte real del número complejo.
+- `i`: de tipo `Double`, que representa la parte imaginaria del número complejo.
 
 ## Funciones y Procedimientos a Implementar
 
 ### 1. `CrearComplejo`
 
 ```pascal
-function CrearComplejo(r: Double; i: Double): TComplejo;
+procedure CrearComplejo(var c: TComplejo; r: Double; i: Double);
 ```
 
-Esta función crea un número complejo a partir de sus partes real e imaginaria.
+Este procedimiento crea un número complejo a partir de sus partes real e imaginaria.
 
 ### 2. `SetParteReal`
 
@@ -116,13 +113,11 @@ Esta función divide dos números complejos y devuelve el resultado. Para dividi
 function Potencia(c: TComplejo; exponente: Integer): TComplejo;
 ```
 
-Esta función eleva un número complejo a una potencia entera y devuelve el resultado. Para elevar un número complejo a una potencia entera... dejaré que ustedes lo averigüen.
-
+Esta función eleva un número complejo a una potencia entera y devuelve el resultado. Para elevar un número complejo a una potencia entera... dejaré que lo averigüeis. 
 
 ## Implementación
 
 Deben implementar todas estas funciones y procedimientos en el archivo `uComplejo.pas`. Una vez implementados, podrán ejecutar el programa `tad_ej1_num_complejo.pas` para verificar su correcto funcionamiento.
-
 
 # Ejercicio 2: Métodos de Pago
 
@@ -321,4 +316,5 @@ El archivo `tad_ej3_gestion_academica.pas` contiene el programa principal que ut
 
 3. ¿Qué otros campos o funcionalidades podrían añadirse a las unidades `uPersona.pas`, `uAsignaturaEvalContinua.pas` y `uAsignaturaEvalFinal.pas` para mejorar la gestión académica?
 
-4. ¿Qué complejidad algorithmica tienen las funciones implementadas?
+4. ¿Qué complejidad algorítmica tienen las funciones implementadas?
+
