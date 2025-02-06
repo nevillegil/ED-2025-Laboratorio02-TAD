@@ -193,20 +193,22 @@ Define un registro `TPersona` que represente una persona. Este registro debe ten
 - `FechaNacimiento`: de tipo `String`, que representa la fecha de nacimiento de la persona.
 - `Rol`: de tipo `TRol`, que representa el rol de la persona (puede ser `rProfesor` o `rAlumno`).
 
+Crea un tipo puntero `PPersona` que apunte a variables de tipo registro `TPersona`.
+
 ### Funciones y Procedimientos a Implementar
 
 1. `CrearPersona`
 
 ```pascal
-function CrearPersona(Nombre, Apellido, DNI, FechaNacimiento: String; Rol: TRol): PPersona;
+procedure CrearPersona(var persona: TPersona; Nombre, Apellido, DNI, FechaNacimiento: String; Rol: TRol);
 ```
 
-Esta función crea una persona a partir de los datos proporcionados.
+Este procedimiento crea una persona a partir de los datos proporcionados. La persona es inicializada con los datos proporcionados y el rol especificado. Para ello la persona es pasada por referencia.
 
 2. `MostrarPersona`
 
 ```pascal
-procedure MostrarPersona(P: PPersona);
+procedure MostrarPersona(P: TPersona);
 ```
 
 Este procedimiento muestra la información de una persona.
@@ -216,8 +218,8 @@ Este procedimiento muestra la información de una persona.
 ### Registros y variables
 
 Define un registro `TAsignatura` que represente una asignatura con evaluación continua. Este registro debe tener los siguientes campos:
-- `Profesor`: de tipo `PPersona`, que representa el profesor de la asignatura.
-- `Alumnos`: un array de `PPersona` que representa los alumnos de la asignatura.
+- `Profesor`: de tipo  `PPersona`, que representa el profesor de la asignatura.
+- `Alumnos`: un array de `PPersona` que representa los alumnos de la asignatura. Puedes crear una constante `MAX_ALUMNOS` para definir el tamaño máximo del array.
 - `NotasPrimerParcial`: un array de `Real` que representa las notas del primer parcial.
 - `NotasSegundoParcial`: un array de `Real` que representa las notas del segundo parcial.
 - `NumAlumnos`: de tipo `Integer`, que representa el número de alumnos en la asignatura.

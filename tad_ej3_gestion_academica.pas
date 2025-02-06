@@ -13,26 +13,18 @@ var
 begin
   { Crear profesor }
   New(Profesor);
-  Profesor^.Nombre := 'Juan';
-  Profesor^.Apellido := 'García';
-  Profesor^.DNI := '12345678A';
-  Profesor^.FechaNacimiento := '1980-01-01';
-  Profesor^.Rol := rProfesor;
+  CrearPersona(Profesor^, 'Juan', 'García', '12345678A', '1980-01-01', rProfesor);
+  MostrarPersona(Profesor^);
 
   { Crear alumnos }
   New(Alumno1);
-  Alumno1^.Nombre := 'Ana';
-  Alumno1^.Apellido := 'López';
-  Alumno1^.DNI := '87654321B';
-  Alumno1^.FechaNacimiento := '2000-05-15';
-  Alumno1^.Rol := rAlumno;
+  CrearPersona(Alumno1^, 'Ana', 'López', '87654321B', '2000-05-15', rAlumno);
+  MostrarPersona(Alumno1^);
+  
 
   New(Alumno2);
-  Alumno2^.Nombre := 'Pedro';
-  Alumno2^.Apellido := 'Martínez';
-  Alumno2^.DNI := '98765432C';
-  Alumno2^.FechaNacimiento := '2001-03-20';
-  Alumno2^.Rol := rAlumno;
+  CrearPersona(Alumno2^, 'Pedro', 'Martínez', '98765432C', '2001-03-20', rAlumno);
+  MostrarPersona(Alumno2^);
 
   { Inicializar asignaturas }
   uAsignaturaEvalContinua.InicializarAsignatura(AsigContinua, Profesor);
@@ -41,6 +33,8 @@ begin
   { Añadir alumnos a ambas asignaturas }
   uAsignaturaEvalContinua.AnadirAlumno(AsigContinua, Alumno1);
   uAsignaturaEvalFinal.AnadirAlumno(AsigFinal, Alumno2);
+
+  WriteLn('---------------------------------');
 
   { Evaluar alumnos }
   WriteLn('Evaluando alumnos...');
@@ -59,9 +53,4 @@ begin
   WriteLn;
   WriteLn('Notas finales Evaluación Final:');
   WriteLn('Pedro Martínez: ', uAsignaturaEvalFinal.CalcularNotaFinal(AsigFinal, '98765432C'):0:2);
-
-  { Liberar memoria }
-  Dispose(Profesor);
-  Dispose(Alumno1);
-  Dispose(Alumno2);
 end.
